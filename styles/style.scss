@@ -1,0 +1,145 @@
+@font-face {
+  font-family: "arcade-classic";
+  src: url(../assets/fonts/arcadeclassic.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-image: url(../assets/images/background.avif);
+}
+
+main {
+  .sketch-board-wrapper {
+    max-width: 720px;
+    width: calc(100% - 1rem);
+    margin: 10vmin auto;
+    border: 1px solid antiquewhite;
+
+    .button-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: black;
+
+      .tool-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      #eraser-button,
+      #clear-button {
+        height: 3.6rem;
+        min-width: 7rem;
+      }
+
+      #color-picker {
+        height: 3.6rem;
+        aspect-ratio: 1;
+        outline: 1px solid white;
+
+        #color {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+        }
+      }
+
+      #eraser-button,
+      #clear-button {
+        font-size: 2rem;
+        font-family: "arcade-classic";
+        font-size: 600;
+        letter-spacing: 1px;
+        padding-inline: 1rem;
+        border: none;
+      }
+
+      #eraser-button {
+        color: white;
+        background-color: salmon;
+      }
+
+      #eraser-button.selected {
+        color: salmon;
+        background-color: white;
+      }
+
+      #clear-button {
+        background-color: crimson;
+        color: antiquewhite;
+        border-color: crimson;
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+
+    #sketch-board {
+      .row {
+        .col {
+          aspect-ratio: 1;
+        }
+      }
+
+      .row:nth-child(odd) {
+        .col:nth-child(odd) {
+          background-color: white;
+        }
+
+        .col:nth-child(even) {
+          background-color: rgb(245, 245, 245);
+        }
+      }
+
+      .row:nth-child(even) {
+        .col:nth-child(odd) {
+          background-color: rgb(245, 245, 245);
+        }
+
+        .col:nth-child(even) {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    .sketch-board-wrapper {
+      .button-wrapper {
+
+        #color,
+        #eraser-button,
+        #clear-button {
+          cursor: pointer;
+        }
+      }
+
+      #sketch-board {
+        .row {
+          .col {
+            cursor: pointer;
+          }
+
+          .col:hover {
+            border: 1px solid black;
+          }
+        }
+      }
+    }
+  }
+}

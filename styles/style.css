@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "arcade-classic";
+  src: url(../assets/fonts/arcadeclassic.ttf);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-image: url(../assets/images/background.avif);
+}
+
+main .sketch-board-wrapper {
+  max-width: 720px;
+  width: calc(100% - 1rem);
+  margin: 10vmin auto;
+  border: 1px solid antiquewhite;
+}
+main .sketch-board-wrapper .button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: black;
+}
+main .sketch-board-wrapper .button-wrapper .tool-buttons {
+  display: flex;
+  gap: 1rem;
+}
+main .sketch-board-wrapper .button-wrapper #eraser-button,
+main .sketch-board-wrapper .button-wrapper #clear-button {
+  height: 3.6rem;
+  min-width: 7rem;
+}
+main .sketch-board-wrapper .button-wrapper #color-picker {
+  height: 3.6rem;
+  aspect-ratio: 1;
+  outline: 1px solid white;
+}
+main .sketch-board-wrapper .button-wrapper #color-picker #color {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+main .sketch-board-wrapper .button-wrapper #eraser-button,
+main .sketch-board-wrapper .button-wrapper #clear-button {
+  font-size: 2rem;
+  font-family: "arcade-classic";
+  font-size: 600;
+  letter-spacing: 1px;
+  padding-inline: 1rem;
+  border: none;
+}
+main .sketch-board-wrapper .button-wrapper #eraser-button {
+  color: white;
+  background-color: salmon;
+}
+main .sketch-board-wrapper .button-wrapper #eraser-button.selected {
+  color: salmon;
+  background-color: white;
+}
+main .sketch-board-wrapper .button-wrapper #clear-button {
+  background-color: crimson;
+  color: antiquewhite;
+  border-color: crimson;
+}
+main .sketch-board-wrapper .button-wrapper #clear-button:active {
+  transform: scale(0.9);
+}
+main .sketch-board-wrapper #sketch-board .row .col {
+  aspect-ratio: 1;
+}
+main .sketch-board-wrapper #sketch-board .row:nth-child(odd) .col:nth-child(odd) {
+  background-color: white;
+}
+main .sketch-board-wrapper #sketch-board .row:nth-child(odd) .col:nth-child(even) {
+  background-color: rgb(245, 245, 245);
+}
+main .sketch-board-wrapper #sketch-board .row:nth-child(even) .col:nth-child(odd) {
+  background-color: rgb(245, 245, 245);
+}
+main .sketch-board-wrapper #sketch-board .row:nth-child(even) .col:nth-child(even) {
+  background-color: white;
+}
+
+@media (min-width: 1024px) {
+  main .sketch-board-wrapper .button-wrapper #color,
+  main .sketch-board-wrapper .button-wrapper #eraser-button,
+  main .sketch-board-wrapper .button-wrapper #clear-button {
+    cursor: pointer;
+  }
+  main .sketch-board-wrapper #sketch-board .row .col {
+    cursor: pointer;
+  }
+  main .sketch-board-wrapper #sketch-board .row .col:hover {
+    border: 1px solid black;
+  }
+}/*# sourceMappingURL=style.css.map */
