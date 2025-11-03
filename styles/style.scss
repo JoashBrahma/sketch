@@ -10,20 +10,26 @@
 }
 
 html {
+  height: 100%;
   font-size: 10px;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
+  height: 100%;
   background-image: url(../assets/images/background.avif);
 }
 
 main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .sketch-board-wrapper {
     max-width: 720px;
     width: calc(100% - 1rem);
-    margin: 10vmin auto;
     border: 1px solid antiquewhite;
 
     .button-wrapper {
